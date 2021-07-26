@@ -12,3 +12,4 @@
 1. Файлы override.tf, override.tf.json
 1. Файлы заканчивающиеся на *_override.tf, *_override.tf.json
 1. Файлы .terraformrc, terraform.rc
+1. v0.1 tag add
