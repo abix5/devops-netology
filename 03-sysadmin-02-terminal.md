@@ -121,24 +121,37 @@ man proc 237 line
 
 11. Узнайте, какую наиболее старшую версию набора инструкций SSE поддерживает ваш процессор с помощью `/proc/cpuinfo`.
 
-**Ответ:**
+**Ответ:** На виртуалке у меня именно 2 сокета, исходя из этого вывод вот такой по первому и второму процессору.
 ```shell
-abix@s3:~$ cat /proc/cpuinfo | grep -oE "(sse.?)"
+abix@s3:~$ cat /proc/cpuinfo | grep -oE "(processor.*)|(sse.?)"
+processor       : 0
 sse 
 sse2
 sse3
 sse4
 sse4
+processor       : 1
 sse 
 sse2
 sse3
 sse4
+sse4
+abix@s3:~$ cat /proc/cpuinfo | grep -oE "(sse.?)" | sort -u
+sse 
+sse2
+sse3
 sse4
 ```
 
 12. При открытии нового окна терминала и vagrant ssh создается новая сессия и выделяется pty. Однако `ssh localhost 'tty'` – `not a tty`. Почитайте, почему так происходит, и как изменить поведение.
 
 **Ответ:** Могу предположить вот этот – `config.ssh.pty` (boolean) - If true, pty will be used for provisioning. Defaults to false.
+
+```shell
+dmitriynenashev@MacBook-Pro-Dmitriy-2 ~ % vagrant help ssh | grep tty
+    -t, --[no-]tty                   Enables tty when executing an ssh command (defaults to true)
+        --no-tty                     Enable non-interactive output
+ ```
 
 13. Бывает, что есть необходимость переместить запущенный процесс из одной сессии в другую. Попробуйте сделать это, воспользовавшись `reptyr`.
 
