@@ -123,24 +123,25 @@ man proc 237 line
 
 **Ответ:** На виртуалке у меня именно 2 сокета, исходя из этого вывод вот такой по первому и второму процессору.
 ```shell
-abix@s3:~$ cat /proc/cpuinfo | grep -oE "(processor.*)|(sse.?)"
+abix@s3:~$ cat /proc/cpuinfo | grep -oP "(processor.*)|(sse.*?)\s"
 processor       : 0
 sse 
-sse2
-sse3
-sse4
-sse4
+sse2 
+sse3 
+sse4_1 
+sse4_2 
 processor       : 1
 sse 
-sse2
-sse3
-sse4
-sse4
-abix@s3:~$ cat /proc/cpuinfo | grep -oE "(sse.?)" | sort -u
+sse2 
+sse3 
+sse4_1 
+sse4_2 
+abix@s3:~$ cat /proc/cpuinfo | grep -oP "(sse.*?)\s" | sort -u
 sse 
-sse2
-sse3
-sse4
+sse2 
+sse3 
+sse4_1 
+sse4_2 
 ```
 
 12. При открытии нового окна терминала и vagrant ssh создается новая сессия и выделяется pty. Однако `ssh localhost 'tty'` – `not a tty`. Почитайте, почему так происходит, и как изменить поведение.
