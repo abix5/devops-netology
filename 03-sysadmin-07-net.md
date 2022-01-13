@@ -139,7 +139,10 @@ vagrant@vagrant:~$ ip neigh
 fe80::21c:42ff:fe00:18 dev eth0 lladdr 00:1c:42:00:00:18 router STALE
 ```
 
-
 Удалить одну запись из таблицы ARP можно командой `ip neigh flush IP_Address` или `arp -d IP_Address`.
 
 Очистить польностью таблицу можно командой `ip neigh flush all`.
+
+8*. Установите эмулятор EVE-ng.
+
+   **Ответ:** на Mac с M1 так и не смог запустить EVE-ng.
