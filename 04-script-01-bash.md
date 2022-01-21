@@ -88,10 +88,10 @@ while ((1==1))
 MSG="$(cat $1)"
 find_str='(\[*\])'
 if ! grep -qE "$find_str" "$1"; then
-  echo "Сообщение должно содержать название задания в формате [задание] сообщение коммита"
+  echo "The message should have been in the format [task] commission message "
   exit 1
 elif [ "${#MSG}" -gt "30" ]; then
-  echo "Сообщение должно быть короче 30 символов"
+  echo "Message must be shorter than 30 characters"
   exit 1
 fi
 ```
