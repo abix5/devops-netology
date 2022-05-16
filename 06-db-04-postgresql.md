@@ -191,6 +191,8 @@ where (price<=499)
 do instead insert into public.orders_2 values(NEW.*);
 ```
 
+## Задача 4
+
 <details><summary>Раскрыть условие задачи</summary>
 
 > Используя утилиту `pg_dump` создайте бекап БД `test_database`.
