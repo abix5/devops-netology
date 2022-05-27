@@ -172,7 +172,7 @@ Percona [предлагают](https://www.percona.com/blog/2019/08/02/out-of-me
 
 ### `UPD2`:
 
-набор параметров, которые нужно крутить:
+Набор параметров, которые нужно крутить:
 
         shared_buffers;
         max_connections и work_mem;
