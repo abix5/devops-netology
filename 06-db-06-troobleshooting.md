@@ -169,3 +169,16 @@ Percona [предлагают](https://www.percona.com/blog/2019/08/02/out-of-me
 Так же возможно это вообще не связанные вещи. Возможно сторонний процесс вызывает `oom killer`, а посттгресс сдыхает потому что больше очков набирает, вариант уменьшить кол-во получаемых очков или установить `vm.oom_kill_allocating_task`, что приведет к уничтожению процесса, запросившего память. 
 
 Если всетаки виноват конфиг, то - `shared_buffers`, `work_mem` и `max_connections`, думаю начать стоит с них, чтобы снизить нагрузку на память.
+
+### `UPD2`:
+
+набор параметров, которые нужно крутить:
+
+        shared_buffers;
+        max_connections и work_mem;
+        maintenance_work_mem;
+        effective_cache_size;
+        huge_pages и vacuum_cost_delay;
+        temp_buffers;
+        max_prepared_transactions;
+
