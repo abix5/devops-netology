@@ -412,4 +412,4 @@ docker-compose down
 
 6. Все изменения должны быть зафиксированы и отправлены в вашей личный репозиторий.
 
-`Сделано`
+https://github.com/abix5/devops-netology/commit/4de2b5ff2be06926e4ab27fe352c43e38e6efb82
